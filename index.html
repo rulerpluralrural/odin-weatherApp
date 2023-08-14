@@ -14,42 +14,40 @@
 		<div class="main">
 			<div class="app" id="app">
 				<div class="weather-info" id="weather-info">
-					<div class="weather-info-card" id="weather-info-card">
-						<div class="card-header">
-							<div class="card-header-left">
-								<div id="weather-info-description">Sunny</div>
-								<div id="weather-info-location">Manila</div>
-								<div id="weather-info-date">Aug 14, 2023</div>
-								<div id="weather-info-time">12:00pm</div>
-							</div>
-							<div class="card-header-right">
-								<div id="weather-info-icon">
-									<img src="Assets/wind.png" alt="" />
-								</div>
-								<div id="weather-info-temp">69°C</div>
-							</div>
+					<div class="card-header">
+						<div class="card-header-left">
+							<div id="weather-info-description">Sunny</div>
+							<div id="weather-info-location">Manila</div>
+							<div id="weather-info-date">Aug 14, 2023</div>
+							<div id="weather-info-time">12:00pm</div>
 						</div>
-						<div class="status-container">
-							<div class="icon-control">
-								<img src="Assets/wind.png" alt="" />
-								<div class="weather-label">Feels Like</div>
-								<div id="feels-like" class="weather-details">69°C</div>
+						<div class="card-header-right">
+							<div class="weather-info-icon">
+								<img id="weather-img" src="Assets/wind.png" alt="" />
 							</div>
-							<div class="icon-control">
-								<img src="Assets/wind.png" alt="" />
-								<div class="weather-label">Humidity</div>
-								<div id="humidity" class="weather-details">69%</div>
-							</div>
-							<div class="icon-control">
-								<img src="Assets/wind.png" alt="" />
-								<div class="weather-label">Chance of Rain</div>
-								<div id="rain" class="weather-details">69%</div>
-							</div>
-							<div class="icon-control">
-								<img src="Assets/wind.png" alt="" />
-								<div class="weather-label">Wind Speed</div>
-								<div id="wind" class="weather-details">69km/h</div>
-							</div>
+							<div id="weather-info-temp">69°C</div>
+						</div>
+					</div>
+					<div class="status-container">
+						<div class="icon-control">
+							<img src="Assets/temperatures.png" />
+							<div class="weather-label">Feels Like</div>
+							<div id="feels-like-details" class="weather-details"></div>
+						</div>
+						<div class="icon-control">
+							<img src="Assets/humidity.png" />
+							<div class="weather-label">Humidity</div>
+							<div id="humidity" class="weather-details">69%</div>
+						</div>
+						<div class="icon-control">
+							<img src="Assets/rain.png" />
+							<div class="weather-label">Chance of Rain</div>
+							<div id="rain" class="weather-details">69%</div>
+						</div>
+						<div class="icon-control">
+							<img src="Assets/wind.png" />
+							<div class="weather-label">Wind Speed</div>
+							<div id="wind" class="weather-details">69km/h</div>
 						</div>
 					</div>
 				</div>
@@ -57,15 +55,17 @@
 					<div class="icon-card" id="icon-card"></div>
 					<img src="./Assets/weather(1).png" alt="weather-info" />
 					<p class="app-name" id="app-name">Weather App</p>
-					<div class="input-control">
-						<input
-							type="text"
-							name="search"
-							id="search-input"
-							placeholder="Enter Your Location"
-						/>
-						<button id="search-button" class="fa fa-search"></button>
-					</div>
+					<form id="search-weather">
+						<div class="input-control">
+							<input
+								type="text"
+								name="search"
+								id="search-input"
+								placeholder="Enter Your Location"
+							/>
+							<button type="submit" id="search-button" class="fa fa-search"></button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
