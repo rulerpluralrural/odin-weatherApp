@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="styles.css" />
+		<script
+			src="https://kit.fontawesome.com/91f7703251.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<div class="main">
+			<div class="app" id="app">
+				<div class="weather-info" id="weather-info">
+					<div class="weather-info-card" id="weather-info-card">
+						<div class="card-header">
+							<div class="card-header-left">
+								<div id="weather-info-description">Sunny</div>
+								<div id="weather-info-location">Manila</div>
+								<div id="weather-info-date">Aug 14, 2023</div>
+								<div id="weather-info-time">12:00pm</div>
+							</div>
+							<div class="card-header-right">
+								<div id="weather-info-icon">
+									<img src="Assets/wind.png" alt="" />
+								</div>
+								<div id="weather-info-temp">69°C</div>
+							</div>
+						</div>
+						<div class="status-container">
+							<div class="icon-control">
+								<img src="Assets/wind.png" alt="" />
+								<div class="weather-label">Feels Like</div>
+								<div id="feels-like" class="weather-details">69°C</div>
+							</div>
+							<div class="icon-control">
+								<img src="Assets/wind.png" alt="" />
+								<div class="weather-label">Humidity</div>
+								<div id="humidity" class="weather-details">69%</div>
+							</div>
+							<div class="icon-control">
+								<img src="Assets/wind.png" alt="" />
+								<div class="weather-label">Chance of Rain</div>
+								<div id="rain" class="weather-details">69%</div>
+							</div>
+							<div class="icon-control">
+								<img src="Assets/wind.png" alt="" />
+								<div class="weather-label">Wind Speed</div>
+								<div id="wind" class="weather-details">69km/h</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="app-input" id="app-input">
+					<div class="icon-card" id="icon-card"></div>
+					<img src="./Assets/weather(1).png" alt="weather-info" />
+					<p class="app-name" id="app-name">Weather App</p>
+					<div class="input-control">
+						<input
+							type="text"
+							name="search"
+							id="search-input"
+							placeholder="Enter Your Location"
+						/>
+						<button id="search-button" class="fa fa-search"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="main.js"></script>
+	</body>
+</html>

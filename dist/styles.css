@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Roboto:wght@300;400;700&display=swap");
+
+:root {
+	--dark-blue: #0b121e;
+	--blue-gray: #202b3c;
+	--light-gray: #bac2d3;
+	--opq-orange:rgba(255, 165, 0, .9);
+	--white-clr: #f2f2f3;
+	--black-clr: #171718;
+	--font-one: "Quicksand", sans-serif;
+	--font-two: "Roboto", sans-serif;
+}
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: var(--font-two);
+	color: var(--white-clr);
+	background-color: var(--light-gray);
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+img {
+	height: 60px;
+	width: 60px;
+	background-color: transparent;
+	border-radius: 5px;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	font-size: 1.2rem;
+}
+
+p {
+	font-size: 1.3rem;
+	font-family: var(--font-one);
+}
+
+.main .app {
+	padding: 2rem;
+	background-color: var(--dark-blue);
+	border-radius: 10px;
+	display: flex;
+	justify-content: space-between;
+    transition: all .4s ease;
+}
+
+.app .weather-info {
+	background-color: var(--opq-orange);
+    color: var(--white-clr);
+	font-family: var(--font-one);
+	padding: 2rem;
+	border-radius: 10px;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+    scale: 0;
+    opacity: 0;
+    transition: all .4s ease;
+}
+
+.fadeIn {
+    scale: 1;
+    opacity: 1;
+}
+
+.card-header {
+	display: flex;
+    padding: 1rem;
+	justify-content: space-between;
+}
+
+.card-header-left div:nth-child(1) {
+	font-size: 2.1rem;
+    font-weight: bold;
+}
+
+.card-header-left div:not(:nth-child(1)) {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.card-header-left * {
+	text-align: left;
+}
+
+.card-header-right {
+	align-self: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.card-header-right img {
+	background-color: transparent;
+}
+
+.icon-control > div {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.icon-control div:nth-child(3) {
+    font-weight: 600;
+}
+
+.weather-info-card {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.weather-info-card .status-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.icon-control {
+	padding: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.7rem;
+}
+
+.icon-control div {
+	text-align: center;
+	font-family: var(--font-one);
+	font-size: 1.2rem;
+}
+
+.app .app-input {
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.app-input img {
+    border: none;
+}
+
+.app-input p {
+	animation: flicker 1.5s infinite alternate;
+}
+
+.input-control {
+	display: flex;
+	align-items: center;
+}
+
+.input-control input {
+	padding: 0.4rem;
+	padding-left: 1rem;
+	font-size: 1.2rem;
+	width: 85%;
+	color: var(--white-clr);
+	border: 1px solid var(--light-gray);
+	border-radius: 5px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	background-color: transparent;
+}
+
+.input-control input:focus,
+.input-control button:focus {
+	outline-color: var(--light-gray);
+	outline-style: solid;
+	transition: 0.4 ease;
+}
+
+.input-control input::placeholder {
+	color: var(--white-clr);
+	font-size: 1.2rem;
+}
+
+.input-control button {
+	width: 15%;
+	padding: 0.4rem;
+	color: var(--dark-blue);
+	background-color: var(--opq-orange);
+	border: 1px solid var(--light-gray);
+	border-left: none;
+	border-radius: 5px;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	top: 5px;
+	right: 5px;
+	font-size: 1.4rem;
+}
+
+.input-control button:hover {
+	cursor: pointer;
+	opacity: .9;
+}
+
+.input-control i {
+	color: var(--white-clr);
+	font-size: 1.2rem;
+}
+
+@keyframes flicker {
+	0%,
+	18%,
+	22%,
+	25%,
+	53%,
+	57%,
+	100% {
+		text-shadow:
+        0 0 4px var(--white-clr),
+        0 0 11px var(--white-clr),
+        0 0 19px var(--white-clr),
+        0 0 40px var(--blue-gray),
+        0 0 80px var(--blue-gray),
+        0 0 90px var(--blue-gray),
+        0 0 100px var(--blue-gray),
+        0 0 150px var(--blue-gray);
+	}
+	20%,
+	24%,
+	55% {
+		text-shadow: none;
+	}
+}
