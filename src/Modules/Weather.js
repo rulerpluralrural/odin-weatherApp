@@ -1,3 +1,5 @@
+import ui from "./UI";
+
 const weather = (() => {
 	async function getData(location) {
 		try {
@@ -11,11 +13,13 @@ const weather = (() => {
 					},
 				},
 			);
-			if (!response.ok) throw new Error(`${location} not found`);
+			console.log(response)
+			if (!response.ok) throw new Error(`Cannot find ${location} city! Please enter a new city`);
 			const data = await response.json();
 			return data;
 		} catch (error) {
 			alert(error);
+			ui.appError()
 		}
 	}
 	return { getData };
