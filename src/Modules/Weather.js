@@ -5,7 +5,7 @@ const weather = (() => {
 		try {
 			const APIkey = "ced9945140ee4935aff131139231208";
 			const response = await fetch(
-				`http://api.weatherapi.com/v1/forecast.json?key=${APIkey}&q=${location}&days=1&aqi=no&alerts=no`,
+				`https://api.weatherapi.com/v1/forecast.json?key=${APIkey}&q=${location}&days=1&aqi=no&alerts=no`,
 				{
 					mode: "cors",
 					headers: {
