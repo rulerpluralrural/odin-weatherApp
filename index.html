@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Weather App</title>
 		<link rel="stylesheet" href="styles.css" />
 		<script
 			src="https://kit.fontawesome.com/91f7703251.js"
@@ -12,6 +12,8 @@
 	</head>
 	<body>
 		<div class="main">
+			<!-- App left side upper part-->
+
 			<div class="app" id="app">
 				<div class="weather-info" id="weather-info">
 					<div class="card-header">
@@ -26,8 +28,12 @@
 								<img id="weather-img" src="Assets/wind.png" alt="" />
 							</div>
 							<div id="weather-info-temp">69°C</div>
+							<button class="change-temp" id="change-temp">°F</button>
 						</div>
 					</div>
+
+					<!-- App left side lower part-->
+
 					<div class="status-container">
 						<div class="icon-control">
 							<img src="Assets/temperatures.png" />
@@ -51,6 +57,17 @@
 						</div>
 					</div>
 				</div>
+
+				<div class="weather-info-error" id="weather-info-error">
+					<i class="fa-solid fa-triangle-exclamation"></i>
+					<p>
+						Error we cannot find the location! <br />
+						Please try again.
+					</p>
+				</div>
+
+				<!-- App search bar-->
+
 				<div class="app-input" id="app-input">
 					<div class="icon-card" id="icon-card"></div>
 					<img src="./Assets/weather(1).png" alt="weather-info" />
@@ -63,12 +80,34 @@
 								id="search-input"
 								placeholder="Enter Your Location"
 							/>
-							<button type="submit" id="search-button" class="fa fa-search"></button>
+							<button
+								type="submit"
+								id="search-button"
+								class="fa fa-search"
+							></button>
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
+
+		<div class="overlay">
+			<div class="lds-spinner">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+
 		<script src="main.js"></script>
 	</body>
 </html>
