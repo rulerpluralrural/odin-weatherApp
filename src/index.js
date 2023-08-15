@@ -20,3 +20,4 @@ searchWeather.addEventListener("submit", async (e) => {
 	loadingState.classList.remove("loading");
 	ui.viewApp(weatherData);
 });
+

@@ -29,7 +29,7 @@ const ui = (() => {
 		weatherContainer.classList.add("fadeIn");
 
 		weatherDescription.textContent = data.current.condition.text;
-		weatherLocation.textContent = data.location.name;
+		weatherLocation.textContent = `${data.location.name}, ${data.location.country}`;
 		weatherDate.textContent = formatDate(new Date(data.location.localtime));
 		weatherTime.textContent = getTime(new Date(data.location.localtime));
 		weatherImg.src = data.current.condition.icon;
@@ -42,16 +42,23 @@ const ui = (() => {
 
 		console.log(data);
 
-		const changeTempButton = document.querySelector("#change-temp");
-		changeTempButton.addEventListener("click", () => {
-			if (changeTempButton.textContent === "°F") {
-				weatherTemp.textContent = `${toFahrenheit(data.current.temp_c)}°F`;
-				feelsLikeDetails.textContent = `${toFahrenheit(data.current.temp_c)}°F`;
-				changeTempButton.textContent = "°C";
-			} else if (changeTempButton.textContent === "°C") {
+		const oldTempButton = document.querySelector("#change-temp");
+
+		const newTempButton = document.createElement("button");
+		newTempButton.id = oldTempButton.id;
+		newTempButton.className = oldTempButton.className;
+		newTempButton.textContent = "°F";
+		oldTempButton.replaceWith(newTempButton);
+
+		newTempButton.addEventListener("click", () => {
+			if (newTempButton.textContent === "°F") {
+				weatherTemp.textContent = `${data.current.temp_f}°F`;
+				feelsLikeDetails.textContent = `${data.current.feelslike_f}°F`;
+				newTempButton.textContent = "°C";
+			} else if (newTempButton.textContent === "°C") {
 				weatherTemp.textContent = `${data.current.temp_c}°C`;
 				feelsLikeDetails.textContent = `${data.current.feelslike_c}°C`;
-				changeTempButton.textContent = "°F";
+				newTempButton.textContent = "°F";
 			}
 		});
 	}
@@ -60,13 +67,13 @@ const ui = (() => {
 		const weatherErrorContainer = document.getElementById("weather-info-error");
 		const weatherContainer = document.getElementById("weather-info");
 		const appContainer = document.getElementById("app");
-		const errorIcon = document.querySelector('.fa-triangle-exclamation')
+		const errorIcon = document.querySelector(".fa-triangle-exclamation");
 
 		appContainer.style.width = "1000px";
 		weatherContainer.style.display = "none";
 		weatherErrorContainer.style.display = "flex";
 		weatherErrorContainer.classList.add("fadeIn");
-		errorIcon.classList.add('shake')
+		errorIcon.classList.add("shake");
 	}
 
 	function formatDate(date) {
@@ -77,10 +84,6 @@ const ui = (() => {
 	function getTime(date) {
 		const newTime = format(date, "hh:mm a");
 		return newTime;
-	}
-
-	function toFahrenheit(temp) {
-		return (temp * 9) / 5 + 32;
 	}
 
 	return { viewApp, appError };
